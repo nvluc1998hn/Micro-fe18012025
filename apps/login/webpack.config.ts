@@ -6,4 +6,22 @@ import config from './module-federation.config';
  * The DTS Plugin can be enabled by setting dts: true
  * Learn more about the DTS Plugin here: https://module-federation.io/configure/dts.html
  */
-export default withModuleFederation(config, { dts: false });
+module.exports = withModuleFederation(config).then((fn) =>
+    fn({
+        output: {
+            publicPath: "auto",
+            assetModuleFilename: 'assets/[name].[hash][ext][query]',
+        },
+        optimization: {
+            runtimeChunk: false,
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: 'asset',
+                },
+            ],
+        },
+    })
+);
