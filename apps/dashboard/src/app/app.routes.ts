@@ -7,6 +7,10 @@ export const appRoutes: Route[] = [
     loadChildren: () => import('login/Routes').then((m) => m.remoteRoutes),
   },
   {
+    path: 'email',
+    loadChildren: () => import('email/Routes').then((m) => m.remoteRoutes),
+  },
+  {
     path: '',
     component: AppComponent,
   },

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '@ng-mf/data-access-user';
-import Icon from '../../../public/start.png';
+// import Icon from '../../../public/start.png';
 
 @Component({
   standalone: true,
@@ -10,7 +10,7 @@ import Icon from '../../../public/start.png';
   selector: 'ng-mf-login-entry',
   template: `
     <div class="login-app">
-    <img [src]="Icon" alt="React Logo" style="width:50px" />
+    <img [src]="" alt="React Logo" style="width:50px" />
       <form class="login-form" (ngSubmit)="login()">
         <label>
           Username:
@@ -47,7 +47,7 @@ import Icon from '../../../public/start.png';
   ],
 })
 export class RemoteEntryComponent {
-  Icon = Icon;
+  //Icon = Icon;
   private userService = inject(UserService);
   username = '';
   password = '';
